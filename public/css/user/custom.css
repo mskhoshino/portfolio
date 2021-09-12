@@ -1,0 +1,342 @@
+/* ヘッダーメニュー */
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300);
+
+body {
+    display: table;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    background: #474747;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: 5px;
+    /* text-transform: uppercase; */
+    color: #fff;
+}
+
+.container {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    width: 2000px;
+    margin: 0 auto;
+}
+
+.menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-list {
+    display: inline-block;
+    padding: 20px;
+}
+
+.menu-link {
+    font-size: 24px;
+    text-decoration: none;
+    position: relative;
+    color: #fff;
+    display: block;
+    cursor: pointer;
+}
+
+.menu-link:before, .menu-link:after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 1px;
+    top: 50%;
+    margin-top: -0.5px;
+    background: #fff;
+}
+
+.menu-link:before {
+    left: -2.5px;
+}
+.menu-link:after {
+    right: 2.5px;
+    background: #fff;
+    transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.menu-link:hover:before {
+    background: #fff;
+    width: 100%;
+    transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.menu-link:hover:after {
+    background: transparent;
+    width: 100%;
+    transition: 0s;
+}
+
+/* メイン */
+.main-contents {
+    margin: 0 auto;
+    margin-top: 50px;
+    width: 60%;
+}
+
+/* 翻訳フォーム */
+a {
+    color: #fff;
+}
+
+.translate-text-box {
+    display: block;
+    margin: 30px 0 0 10px;
+    max-width: 700px;
+}
+
+.error_message {
+    font-size: 12px;
+    color: #ffd6d6;
+    margin: 10px;
+}
+
+.title {
+    font-size: 20px;
+    margin: 30px 0 0 10px;
+}
+
+.sub_title {
+    margin: 50px 0 0 10px;
+}
+
+.translate-button {
+    margin: 30px 0 0 10px;
+}
+
+.language_type {
+    font-size: 18px;
+    margin: 30px 0 0 10px;
+    padding: 5px;
+}
+
+.language_type_message {
+    margin: 5px 0 0 10px;
+}
+
+.translate_result {
+    font-size: 18px;
+    margin: 20px 0 30px 10px;
+    min-height: 30px;
+}
+
+.result_translated {
+    margin-top: 10px;
+    /* font-family: YuGothic、游ゴシック体; */
+}
+
+/* 記事検索 */
+.search {
+    text-align: left;
+}
+
+.search-section {
+    font-size: 18px;
+    margin: 20px 0 5px 0;
+}
+
+.search-select {
+    padding: 2px;
+    width: 200px;
+}
+
+.search_text {
+    width: 250px;
+}
+
+.search_btn {
+    margin-left: 30px;
+}
+
+/* 記事一覧 */
+
+.list {
+    text-align: left;
+    margin-top: 60px;
+    /* margin: 50px 0 10px 30px; */
+}
+
+.list_contents {
+    margin: 10px 10px 10px 0;
+}
+
+.align-middle {
+    font-size: 18px;
+}
+
+.content_category {
+    min-width: 100px;
+}
+
+.content_title {
+    text-decoration: none;
+    min-width: 300px;
+}
+
+.content_summary {
+    padding: 20px 0 40px 0;
+}
+
+.align-middle {
+    padding: 20px 20px 20px 0;
+}
+
+/* 記事詳細 */
+.detail_category {
+    font-size: 18px;
+    text-align: center;
+}
+
+.detail_title {
+    margin-top: 10px;
+    text-align: center;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 10px;
+}
+
+.detail_content {
+    margin-top: 30px;
+    font-size: 18px;
+}
+
+.return_btn {
+    margin-top: 80px;
+    font-size: 18px;
+}
+
+
+/* フッター */
+footer {
+    font-size: 12px;
+    text-align: center;
+    margin-top: 100px;
+}
+
+/* タブレット用レイアウト */
+@media screen and (max-width: 959px) {
+    .title {
+        font-size: 22px;
+    }
+
+    /* 翻訳フォーム */
+    .language_type {
+        font-size: 18px;
+    }
+
+    .translate-text-box {
+        font-size: 18px;
+        height: 200px;
+    }
+
+    .translate-button {
+        font-size: 18px;
+    }
+
+    .sub_title {
+        font-size: 18px;
+    }
+
+    .translate_result {
+        font-size: 16px;
+    }
+
+    .error_message {
+        font-size: 14px;
+    }
+
+    /* 記事一覧 */
+    .main-contents {
+        width: 80%;
+    }
+
+    .search-section {
+        font-size: 16px;
+    }
+
+    .search-select {
+        padding: 5px;
+    }
+
+    .search_text {
+        font-size: 16px;
+        padding: 4px;
+    }
+
+    .content_summary{
+        font-size: 18px;
+    }
+
+    /* 記事詳細 */
+    .detail_content {
+        font-size: 16px;
+    }
+}
+
+/* スマホ用レイアウト */
+@media screen and (max-width: 480px) {
+    .title {
+        font-size: 20px;
+    }
+
+    /* 翻訳フォーム */
+    .language_type {
+        font-size: 16px;
+        max-width: 280px;
+    }
+
+    .translate-text-box {
+        font-size: 16px;
+        height: 150px;
+        max-width: 280px;
+    }
+
+    .translate-button {
+        font-size: 16px;
+    }
+
+    .sub_title {
+        font-size: 16px;
+    }
+
+    .translate_result {
+        font-size: 16px;
+    }
+
+    .error_message {
+        font-size: 16px;
+    }
+
+    /* 記事一覧 */
+    .main-contents {
+        width: 95%;
+    }
+
+    .search-section {
+        font-size: 16px;
+    }
+
+    .search-select {
+        padding: 5px;
+    }
+
+    .search_text {
+        font-size: 16px;
+        padding: 5px;
+    }
+
+    .content_summary{
+        font-size: 16px;
+    }
+
+    .search_btn {
+        margin: 20px 0 0 0;
+    }
+}
+

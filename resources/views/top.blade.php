@@ -17,6 +17,7 @@
               <br>
               2018年からシステムサポート業務に携わりながらプログラミングを学び、2019年にプロジェクトへ初参画しました。<br>
               直近ではCakePHP、JavaScriptを使って企業様向けの業務ツールを開発しているバックエンドエンジニアです。<br>
+              <a href="https://github.com/mskhoshino/portfolio">https://github.com/mskhoshino/portfolio</a>
             </dd>
           </div>
 
@@ -80,23 +81,10 @@
                 <li>記事編集・削除</li>
                 <li>記事一覧表示</li>
 
+                <p>ソースコードはプロフィールのGitHubアカウントで公開しています。</p>
+
               </span>
               <br>
-              <!-- <span>
-                <a href="/hp" target="_blank" rel="noopener noreferrer" style="font-weight: bold;">ホットペッパーお店検索</a>
-                <p>開発環境</p>
-                <li>CentOS</li>
-                <li>Vagrant</li>
-                <li>Apache</li>
-                <li>MySQL</li>
-                <br>
-
-                <p>使用言語<p>
-                <li>Laravel</li>
-                <li>JavaScript</li>
-                <li>HTML</li>
-                <li>CSS</li>
-              </span> -->
             </dd>
           </div>
         </dl>

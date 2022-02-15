@@ -26,8 +26,6 @@ class HomeController extends Controller
     */
     public function index()
     {
-
-        dd($language_type);
         $language_type_from = null;
 
         return view('user.index', compact('language_type_pulldown', 'language_type_from'));

@@ -28,6 +28,7 @@
               <li>HTML</li>
               <li>CSS</li>
               <li>JavaScript</li>
+              <li>jQuery</li>
               <br>
 
               <h3 class="item">バックエンド</h3>

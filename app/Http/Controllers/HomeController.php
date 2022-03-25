@@ -49,6 +49,12 @@ class HomeController extends Controller
         $language_type_from = $input['language_type_from'];
         $messages = [];
 
+        // 言語選択プルダウン
+        $language_type_pulldown = $this->languageTypePulldown;
+
+        // 言語タイプ
+        $language_type = $this->languageType;
+
         // バリデーション
         $messages = $this->inputValidation($text, $language_type_from);
         if($messages) {
@@ -60,8 +66,6 @@ class HomeController extends Controller
         $base_url = config('app.translate_api_base_url');
         $url_param = '?text=%s&source=%s&target=%s';
 
-        // 言語タイプ
-        $language_type = $this->languageType;
         $japanese = 'ja';
         $english = 'en';
         $chinese = 'zh';
@@ -107,9 +111,6 @@ class HomeController extends Controller
         // 結果(json)を配列に変換
         $posts_1 = json_decode($posts_1, true);
         $posts_2 = json_decode($posts_2, true);
-
-        // 言語選択プルダウン
-        $language_type_pulldown = $this->languageTypePulldown;
 
         return view('user/index', compact('language_type_pulldown', 'language_type_from', 'posts_1', 'posts_2', 'translated_language_1', 'translated_language_2'));
         return view('user.layout', compact('language_type_pulldown', 'language_type_from', 'posts_1', 'posts_2', 'translated_language_1', 'translated_language_2'));

@@ -7,15 +7,15 @@ use GuzzleHttp\Client;
 
 class HomeController extends Controller
 {
-    // 言語プルダウン
-    private $language_type_pulldown = [
-        'ja' => '日本語を翻訳する',
-        'zh' => '中国語を翻訳する',
-        'en' => '英語を翻訳する'
+    // 言語選択プルダウン
+    public $languageTypePulldown = [
+        'ja' => '日本語を英語・中国語に翻訳する',
+        'zh' => '中国語を英語・日本語に翻訳する',
+        'en' => '英語を中国語・日本語に翻訳する'
     ];
 
     // 言語タイプ
-    private $language_type = [
+    public $languageType = [
         'ja' => '日本語',
         'zh' => '中国語',
         'en' => '英語'
@@ -26,6 +26,9 @@ class HomeController extends Controller
     */
     public function index()
     {
+        // 言語選択プルダウン
+        $language_type_pulldown = $this->languageTypePulldown;
+
         $language_type_from = null;
 
         return view('user.index', compact('language_type_pulldown', 'language_type_from'));
@@ -47,7 +50,7 @@ class HomeController extends Controller
         $messages = [];
 
         // バリデーション
-        $messages = inputValidation($text, $language_type_from);
+        $messages = $this->inputValidation($text, $language_type_from);
         if($messages) {
             return view('user/index', compact('language_type_pulldown', 'messages', 'language_type_from'));
             return view('user.layout', compact('language_type_pulldown', 'messages', 'language_type_from'));
@@ -57,6 +60,8 @@ class HomeController extends Controller
         $base_url = config('app.translate_api_base_url');
         $url_param = '?text=%s&source=%s&target=%s';
 
+        // 言語タイプ
+        $language_type = $this->languageType;
         $japanese = 'ja';
         $english = 'en';
         $chinese = 'zh';
@@ -101,7 +106,10 @@ class HomeController extends Controller
 
         // 結果(json)を配列に変換
         $posts_1 = json_decode($posts_1, true);
-        $posts_2 = json_decode($posts_2, true);       
+        $posts_2 = json_decode($posts_2, true);
+
+        // 言語選択プルダウン
+        $language_type_pulldown = $this->languageTypePulldown;
 
         return view('user/index', compact('language_type_pulldown', 'language_type_from', 'posts_1', 'posts_2', 'translated_language_1', 'translated_language_2'));
         return view('user.layout', compact('language_type_pulldown', 'language_type_from', 'posts_1', 'posts_2', 'translated_language_1', 'translated_language_2'));

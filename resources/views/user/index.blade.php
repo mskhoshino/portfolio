@@ -6,7 +6,7 @@
       <div>
         <select class="language_type" name="language_type_from" id="language_type language_type_from">
             <option value="">翻訳したい言語を選択してください</option>
-            @foreach($language_type as $key => $value)
+            @foreach($language_type_pulldown as $key => $value)
               <option value="{{ $key }}" @if($key == $language_type_from) selected @endif>{{ $value }}</option>
             @endforeach
         </select>

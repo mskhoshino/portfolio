@@ -13,9 +13,9 @@
       @if(request()->path() == 'admin/login')
         <div class="container">
             <ul class="menu">
-              <li class="menu-list"><a href="{{ route('user.index') }}" class="menu-link">Translate</a></li>
-              <li class="menu-list"><a href="{{ route('user.list') }}" class="menu-link">Contents</a></li>
-              <li class="menu-list"><a href="{{ route('login') }}" class="menu-link">Admin</a></li>
+              <li class="menu-list"><a href="{{ route('user.index') }}" class="menu-link">TRANSLATE</a></li>
+              <li class="menu-list"><a href="{{ route('user.list') }}" class="menu-link">CONTENTS</a></li>
+              <li class="menu-list"><a href="{{ route('login') }}" class="menu-link">ADMIN</a></li>
             </ul>
           </div>
         </header>
